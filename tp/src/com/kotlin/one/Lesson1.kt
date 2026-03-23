@@ -12,9 +12,12 @@ fun main() {
     // Enforce `city` to be immutable and `temperature` mutable
     // Then print the sentence again after changing `temperature`
 
-    TODO(
-        "Exercise 1 Variables implementation"
-    )
+    val city: String = "Petion-Ville"
+    var temperature: Double = 25.5
+
+    println("It is $temperature°C in $city")
+    temperature += 10
+    println("It is $temperature°C in $city")
 
 
     // ✅ EXERCISE 2 Conditionals:
@@ -26,28 +29,52 @@ fun main() {
     // - If score between 50 and 60, print "Just passed!"
     // - If score between 61 and 99, print "Well done!"
 
-    TODO(
-        "Exercise 2 Conditionals implementation"
-    )
+    val score: Int = 90
 
-    // ✅ EXERCISE 3 list and Loops:
+    if (score < 0 || score > 100) {
+        println("Invalid score")
+    } else if (score == 100) {
+        println("Perfect score!")
+    } else if (score < 50) {
+        println("You failed!")
+    } else if (score <= 60) {
+        println("Just passed!")
+    } else {
+        println("Well done!")
+    }
+
+
+    // ✅ EXERCISE 3 List and Loops:
     // Create a list of your favorite fruits
     // Loop through the list and print each fruit in uppercase
     // Then, print the total number of fruits in the list
     // Ask the user to enter a fruit name and check if it's in the list
 
-    TODO(
-        "Exercise 3 List and Loops implementation"
-    )
+    val fruits = listOf("mango", "banana", "papaya", "coconut")
 
-    // ✅EXERCISE 4 Elvis Operator:
+    for (fruit in fruits) {
+        println(fruit.uppercase())
+    }
+
+    println("Total fruits: ${fruits.size}")
+
+    print("Enter a fruit name: ")
+    val input = readLine()
+    if (fruits.contains(input?.lowercase())) {
+        println("$input is in the list!")
+    } else {
+        println("$input is not in the list.")
+    }
+
+
+    // ✅ EXERCISE 4 Elvis Operator:
     // Create a nullable variable `nickname` of type String? and assign it null
     // Print the number of characters in `nickname`
     // Print the nickname or "No nickname provided" if it's null using the Elvis operator
 
-    TODO(
-        "Exercise 4 Elvis Operator implementation"
-    )
+    val nickname: String? = null
+
+    println("Length: ${nickname?.length ?: 0}")
+    println(nickname ?: "No nickname provided")
 
 }
-
